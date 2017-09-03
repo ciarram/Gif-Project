@@ -7,8 +7,15 @@ $.ajax({
     url: getUrl,
     method: 'GET',
 }).done(function(response){
-    console.log(response)
-
+    console.log(response);
+    var image = response.data[0].images.original.url;
+    console.log(image);
+    //var imageUrl = response.data;
+    //console.log(imageUrl);
+    var newImage = $('<img>');
+    newImage.attr("src", image);
+    console.log(newImage);
+    $("#gifs").html(newImage);
 })
 
 })
