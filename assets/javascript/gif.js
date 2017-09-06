@@ -6,22 +6,17 @@ console.log(topic);
 var key = "dc6zaTOxFJmzC";
 var getUrl = "https://api.giphy.com/v1/gifs/search?q=parks+and+recreation&api_key=" + key + "&limit=10";
 
-function renderButtons(){
+//function renderButtons() {
+    //console.log("the function works");
     //$("#buttons").empty();
-    for(var index = 0; index < topic.length; index++){
-        var topicButton = $("<button>");
-        console.log(topicButton);
-        topicButton.addClass("show");
-        topicButton.attr("data-name", topic[index])
-        //console.log(topicButton);
-        topicButton.text(topic[index]);
-        topicButton.push("#buttons");
-        console.log("this works")
+    for(var index = 0; index < topic.length; index++) {
+        var topicButton = $("<button>").addClass("show").attr("data-name", topic[index]).text(topic[index]);
+        console.log(topicButton, 'this is a button');
         $("#buttons").append(topicButton);
-        $("#buttons").html(topicButton);
+        
     }
 
-}
+//}
 
 $.ajax({
     url: getUrl,
