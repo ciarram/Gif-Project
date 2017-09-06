@@ -16,7 +16,7 @@ console.log(topic);
 
 //}
 //displaying the 10 GIFs with a button
-function displayGifs(){
+//function displayGifs(){
 var shows = $(this).attr("data-name");
 var key = "dc6zaTOxFJmzC";
 var getUrl = "https://api.giphy.com/v1/gifs/search?q=" + topic + "&api_key=" + key + "&limit=10";
@@ -44,7 +44,7 @@ var getUrl = "https://api.giphy.com/v1/gifs/search?q=" + topic + "&api_key=" + k
     }   
     })
 //})
-}
+//}
 
 //Adding a new button when entering a name and clicking the submit button in the form section
 
