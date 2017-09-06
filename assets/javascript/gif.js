@@ -23,21 +23,23 @@ $.ajax({
     method: 'GET',
 }).done(function(response){
     console.log(response);
-    
-    var image = response.data[0].images.original_still.url;
+    for(var index=0; index<response.data.length; index++){
+    var image = response.data[index].images.original_still.url;
     console.log(image);
     //var newGif = $("<div class='new-gifs'>");
     var newImage = $('<img>');
     newImage.attr("src", image);
     newImage.attr("data-state", 'still');
-    newImage.attr("data-animate", response.data[0].images.original_still.url);
+    newImage.attr("data-animate", response.data[index].images.original_still.url);
     console.log(newImage);
     //newGif.prepend(newImage);
     //newGif.prepend(topic);
     //console.log(newGif);
-    //$("#gifs").html(newImage);
-    
+    $("#gifs").append(newImage);
+    }   
 })
+
+
 //displaying the 10 GIFs with a button
 
 
