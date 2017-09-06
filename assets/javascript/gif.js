@@ -15,7 +15,9 @@ console.log(topic);
     }
 
 //}
-//function displayGifs(){
+//displaying the 10 GIFs with a button
+function displayGifs(){
+var shows = $(this).attr("data-name");
 var key = "dc6zaTOxFJmzC";
 var getUrl = "https://api.giphy.com/v1/gifs/search?q=" + topic + "&api_key=" + key + "&limit=10";
     console.log("I can pick up a string");
@@ -37,14 +39,22 @@ var getUrl = "https://api.giphy.com/v1/gifs/search?q=" + topic + "&api_key=" + k
         newImage.attr("data-state", 'still');
         newImage.attr("data-animate", response.data[i].images.original.url);
         console.log(newImage);
-        //$("#gifs").append(newImage);
+        $("#gifs").append(printedRating);
+        $("#gifs").append(newImage);
     }   
-    //})
+    })
+//})
+}
+
+//Adding a new button when entering a name and clicking the submit button in the form section
+
+$("#search-button").on('click', function(event){
+    event.preventDefault();
+    var newShow = $("#input").val();
+    newShow.push(topic);
+        console.log('newShow',newShow);
+
 })
-//}
-
-//displaying the 10 GIFs with a button
-
 
 //click on the GIF to animate it
 //$("img").on('click',function(){
