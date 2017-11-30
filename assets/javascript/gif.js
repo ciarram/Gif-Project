@@ -15,11 +15,16 @@ console.log(topic);
     }
 
 //}
+
+    $("#buttons").on('click', function(event){
+        event.preventDefault();
+        
+    })
 //displaying the 10 GIFs with a button
 //function displayGifs(){
 var shows = $(this).attr("data-name");
 var key = "dc6zaTOxFJmzC";
-var getUrl = "https://api.giphy.com/v1/gifs/search?q=" + topic + "&api_key=" + key + "&limit=10";
+var getUrl = "https://api.giphy.com/v1/gifs/search?q=The+IT+Crowd&api_key=" + key + "&limit=10";
     console.log("I can pick up a string");
 //$(topicButton).on('click', function(){
     $.ajax({
